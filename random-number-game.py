@@ -1,6 +1,6 @@
-import random
+from random import randint
 
-value = random.randint(1, 10)
+value = randint(1, 10)
 tries = 0
 guess = input('Guess a number between 1 to 10: ')
 guess = int(guess)
