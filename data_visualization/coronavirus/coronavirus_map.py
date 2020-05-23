@@ -47,4 +47,5 @@ wm.title = 'Coronavirus Cases Confirmed by Country\n' + 'Total Confirmed Worldwi
 wm.add('0-1000 cases', cv1)
 wm.add('1000-100,000 cases', cv2)
 wm.add('>100,000 cases', cv3)
-wm.render_to_file('corona_virus_cases.svg')
+# wm.render_to_file('corona_virus_cases.svg')
+wm.render_in_browser()
