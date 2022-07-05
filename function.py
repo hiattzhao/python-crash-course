@@ -1,6 +1,7 @@
 #"as" can be used as alias to prevent naming collision
-import module as m #imports all functions
-from module import favorite_book as fb #imports one function from the module
+from pkg_resources import EGG_DIST
+import module as m #imports all functions from module.py
+from module import favorite_book as fb #imports one function from module.py
 
 #from module import * <-- "*" imports all functions in a module
 
@@ -126,3 +127,27 @@ def build_profile(fname, lname, **info):
   print(profile)
 
 build_profile('hiatt', 'zhao', age=36, height=5.8)
+
+
+
+#Below are notes from Automate the Boring Stuff 2nd edition
+
+#Behind the scenes, Python adds return None to the end of any function definition with no return statement.
+
+#This is similar to how a while or for loop implicitly ends with a continue statement.
+
+#If you use a return statement without a value, then None is returned.
+
+#Local variables cannot be used in the global scope
+#Local scopes cannot use variables in other local scopes
+
+#Global variables can be read from a local scope
+#Avoid using local and globle variables with the same name
+#If you need to modify a global variable from within a function, use the global statement. 
+eggs = 'eggs'
+def spam():
+  global eggs
+  eggs = 'spam'
+
+spam()
+print(eggs) #output: spam
